@@ -1,0 +1,182 @@
+<!-- Navigation Section --><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Hamburger Button (Menu toggle) -->
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            
+            <!-- Navigation Links (hidden on mobile initially) -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+        </ul>
+    </nav>
+</header>
+        </ul>
+    </nav>
+</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player bs 1 Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to CSS file -->
+</head>
+<body>
+
+    <!-- Header Section with Video Background -->
+    <header class="header">
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="video/background2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Overlay for Background Styling -->
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 id="main-title" class="title">Player bs 1</h1>
+            <p class="subtitle">Video Editor | Creative Visionary | Storyteller</p>
+            <button class="explore-button" onclick="window.location.href='#portfolio'">Explore My Work</button>
+        </div>
+    </header>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>Project 1</h3>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project 2</h3>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project 3</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manage My Work Section -->
+    <section class="work-section" id="work">
+        <h2 class="section-title">Manage My Work</h2>
+        <div class="work-categories">
+            <div class="work-box" onclick="showDetails('documented')">
+                <h3 class="work-title">Documented Style</h3>
+            </div>
+            <div class="work-box" onclick="showDetails('music')">
+                <h3 class="work-title">Music</h3>
+            </div>
+            <div class="work-box" onclick="showDetails('trending')">
+                <h3 class="work-title">Trending</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="img" onclick="showText()">
+                <img src="image/logo.png" alt="mukter Ahmed" class="profile-pic">
+                <div class="hover-text" id="hoverText">mukter Ahmed</div>
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    I’m a passionate video editor and visual storyteller with a keen eye for detail and a love for crafting compelling narratives. With years of experience in the industry, I bring creativity, precision, and dedication to every project. My goal is to help brands and individuals tell their stories in the most impactful way possible.
+                </p>
+            </div>
+        </div>
+        <div class="skills">
+            <h3>Skills & Expertise</h3>
+            <ul>
+                <li>Video Editing</li>
+                <li>Motion Graphics</li>
+                <li>Color Grading</li>
+                <li>Adobe Premiere Pro, After Effects</li>
+                <li>Storyboarding & Script Writing</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- JavaScript for Click Event and Animations -->
+    <script>
+        function showDetails(category) {
+            alert("You clicked on: " + category);
+        }
+
+        // Add fade-in animation for the title on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const title = document.getElementById('main-title');
+            title.classList.add('fade-in');
+        });
+
+        // Change title color on click
+        const title = document.getElementById('main-title');
+        title.addEventListener('click', function() {
+            title.classList.toggle('color-change');
+        });
+
+        function showText() {
+            const hoverText = document.getElementById("hoverText");
+            hoverText.classList.toggle("visible");
+        }
+
+        // Additional Animation for Profile Pic Click
+        const profilePic = document.querySelector('.profile-pic');
+        profilePic.addEventListener('click', function() {
+            profilePic.classList.add('clicked'); // Trigger animation
+        });
+    </script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Our Services</h1>
+        <p>Details about our services...</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All Rights Reserved.</p>
+    </footer>
+<a href="https://youtube.com/@playerbs1?si=b9GWvsTdBualoZk3" target="_blank">youtube</a>
+</body>
+</html>
+</body>
+</html>
+</body>
+</html>
