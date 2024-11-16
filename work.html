@@ -1,0 +1,134 @@
+<head>
+    <link rel="stylesheet" href="Work-Style.css">
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore My Work</title>
+    <link rel="stylesheet" href="Work-Style.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <div class="main-nav">
+        <ul>
+            <li><a href="#documented">Documented</a></li>
+            <li><a href="#music">Music Videos</a></li> <!-- Updated section name here -->
+            <li><a href="#trending">Trending</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="work-section">
+        <h2 class="section-title">Explore My Projects</h2>
+
+        <!-- Container for left-to-right scrolling -->
+        <div class="scroll-container">
+            <!-- Documented Projects Section -->
+            <div id="documented" class="work-item">
+                <h3>Documented Projects</h3>
+                <p>Here are my documented projects showcasing my work over the years.</p>
+
+                <!-- Video Embed for Documented Video 1 -->
+                <div class="video-container">
+                    <div id="documented-video1" class="video-thumbnail">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/3Rp--1hBkDw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/3Rp--1hBkDw')">Play on YouTube</button>
+                    <button class="play-page-btn" onclick="playFullscreen('3Rp--1hBkDw')">Play on My Page</button>
+                </div>
+
+                <!-- Video Embed for Documented Video 2 -->
+                <div class="video-container">
+                    <div id="documented-video2" class="video-thumbnail">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/4h9_Jmrql1Y" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/4h9_Jmrql1Y')">Play on YouTube</button>
+                    <button class="play-page-btn" onclick="playFullscreen('4h9_Jmrql1Y')">Play on My Page</button>
+                </div>
+            </div>
+
+            <!-- Music Videos Projects Section -->
+            <div id="music" class="work-item">
+                <h3>Music Videos Projects</h3>
+                <p>Explore the music videos I've worked on.</p>
+
+                <!-- Updated Video Embed for Music Video 1 -->
+                <div class="video-container">
+                    <div id="music-video1" class="video-thumbnail">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/6uqvbw9Chvw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/6uqvbw9Chvw')">Play on YouTube</button>
+                    <button class="play-page-btn" onclick="playFullscreen('6uqvbw9Chvw')">Play on My Page</button>
+                </div>
+
+                <!-- Updated Video Embed for Music Video 2 -->
+                <div class="video-container">
+                    <div id="music-video2" class="video-thumbnail">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qTmmoDKguwI" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/qTmmoDKguwI')">Play on YouTube</button>
+                    <button class="play-page-btn" onclick="playFullscreen('qTmmoDKguwI')">Play on My Page</button>
+                </div>
+
+                <!-- Updated Video Embed for Music Video 3 -->
+                <div class="video-container">
+                    <div id="music-video3" class="video-thumbnail">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/PcPxirhI_kE" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/PcPxirhI_kE')">Play on YouTube</button>
+                    <button class="play-page-btn" onclick="playFullscreen('PcPxirhI_kE')">Play on My Page</button>
+                </div>
+            </div>
+
+            <!-- Trending Projects Section -->
+            <div id="trending" class="work-item">
+                <h3>Trending Projects</h3>
+                <p>Check out some of the latest trending projects I’ve created.</p>
+                <div class="video-container">
+                    <div id="trending-video" class="video-thumbnail">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/6-Fay-G4jlM" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/6-Fay-G4jlM')">Play on YouTube</button>
+                    <button class="play-page-btn" onclick="playFullscreen('6-Fay-G4jlM')">Play on My Page</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Video Container -->
+    <div id="fullscreen-container" class="fullscreen-video-container" style="display: none;">
+        <iframe id="fullscreen-video" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+        <div class="close-btn" onclick="closeFullscreen()">X</div>
+    </div>
+
+    <script>
+        // Function to open YouTube video
+        function openYouTube(url) {
+            window.open(url, '_blank');
+        }
+
+        // Function to play video on the page in fullscreen
+        function playFullscreen(videoId) {
+            var videoUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+            var fullscreenContainer = document.getElementById('fullscreen-container');
+            var fullscreenVideo = document.getElementById('fullscreen-video');
+            
+            fullscreenVideo.src = videoUrl;
+            fullscreenContainer.style.display = 'flex';
+        }
+
+        // Function to close fullscreen video
+        function closeFullscreen() {
+            var fullscreenContainer = document.getElementById('fullscreen-container');
+            var fullscreenVideo = document.getElementById('fullscreen-video');
+            
+            fullscreenVideo.src = '';
+            fullscreenContainer.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
