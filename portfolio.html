@@ -1,0 +1,190 @@
+<script src="script.js"></script>
+<link rel="stylesheet" href="video style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Player bs 1</title>
+    <link rel="stylesheet" href="video style.css">
+    <script src="script.js"></script>
+    <style>
+        /* Basic Styling for Video Section */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .portfolio-videos {
+            margin: 40px auto;
+            text-align: center;
+            max-width: 1200px;
+        }
+
+        .showreel-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .video-container {
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            max-width: 560px;
+            width: 100%;
+            background-color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+
+        /* Button Styling Below Video */
+        .video-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons */
+        }
+
+        .video-buttons button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            width: 200px;
+        }
+
+        .video-buttons button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(72, 255, 88, 0.7);
+        }
+
+        .video-buttons button:active {
+            background-color: #388e3c;
+        }
+
+        .video-buttons .fullscreen-button {
+            background-color: #007bff;
+        }
+
+        .video-buttons .fullscreen-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+        }
+
+        .video-buttons .fullscreen-button:active {
+            background-color: #003366;
+        }
+
+        /* Add some responsive design */
+        @media (max-width: 768px) {
+            .video-container {
+                max-width: 100%;
+            }
+
+            .video-buttons {
+                flex-direction: column;
+            }
+
+            .video-buttons button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Portfolio Videos Section -->
+    <section class="portfolio-videos">
+        <h2>My Portfolio</h2>
+
+        <!-- Showreel Section -->
+        <div class="showreel-title">Showreel</div>
+        <div class="video-container">
+            <iframe id="video1" src="https://www.youtube.com/embed/Q96zxmyAXjI?rel=0" title="Showreel Video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-buttons">
+                <button onclick="window.open('https://youtu.be/Q96zxmyAXjI')">Watch on YouTube</button>
+                <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('video1'))">Go Full Screen</button>
+<!-- Showreel Section -->
+<div class="showreel-title">Showreel</div>
+<div class="video-container">
+    <iframe 
+        id="video1" 
+        src="https://www.youtube.com/embed/oZYhmcCEkng" 
+        title="Showreel Video" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+    <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/oZYhmcCEkng')">Watch on YouTube</button>
+        <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('video1'))">Go Full Screen</button>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Fullscreen function for iframe
+        function requestFullScreen(element) {
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) { // Firefox
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) { // IE/Edge
+                element.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
