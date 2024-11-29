@@ -1,4 +1,4 @@
-/* Full Screen Setup */
+/* Global Reset */
 *,
 *::before,
 *::after {
@@ -10,122 +10,152 @@
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #10171e;
+    color: #e5e5e5;
     overflow-x: hidden;
 }
 
 /* Navigation Menu Styling */
 nav {
-    background-color: #0f172a;
-    padding: 15px;
-    text-align: center;
+    background-color: #0a0f1b;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
-    color: #cbd5e1;
+    color: #e5e5e5;
     text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #00ccff;
-    box-shadow: 0 0 10px #00ccff, 0 0 20px #00ccff;
+    background: linear-gradient(45deg, #00ccff, #00ff99);
+    color: #10171e;
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.8), 0 0 30px rgba(0, 204, 255, 0.8);
     transform: scale(1.1);
 }
 
-/* Portfolio Section with Full-Screen Background */
+/* Portfolio Section */
 .portfolio-videos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0;
     text-align: center;
-    background-image: url('image/player.jpg'); /* Background image */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+    padding: 60px 20px;
+    background: linear-gradient(160deg, #10171e, #1b2836);
 }
 
 .portfolio-videos h2 {
-    color: #e0f2fe;
-    text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #007acc;
-    z-index: 1;
+    color: #00ccff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(0, 204, 255, 0.8);
 }
 
-/* Video Container Styling */
-.video-container {
-    position: relative;
+/* Side-by-Side Video Layout */
+.video-row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    max-width: 800px;
-    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure responsiveness */
     margin-bottom: 40px;
-    z-index: 2;
+}
+
+.video-container {
+    background-color: #0a0f1b;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 600px; /* Adjust width to create side-by-side effect */
+    flex: 1; /* Flexbox adjustment for even spacing */
 }
 
 .video-container iframe {
     width: 100%;
-    height: 450px;
-    border-radius: 10px;
-    border: 2px solid #007acc;
-    box-shadow: 0 0 15px rgba(0, 204, 255, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 315px; /* Adjusted height for side-by-side alignment */
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .video-container iframe:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
     box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
 }
 
-/* Button Container Styling */
+.video-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 255, 153, 0.3), 0 10px 40px rgba(0, 204, 255, 0.3);
+}
+
+/* Button Styling */
 .video-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .video-buttons button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
+    background: linear-gradient(45deg, #00ccff, #00ff99);
+    color: #10171e;
+    font-size: 1rem;
+    padding: 10px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(72, 255, 88, 0.7);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 255, 153, 0.4), 0 4px 20px rgba(0, 204, 255, 0.4);
+    transition: all 0.3s ease;
 }
 
 .video-buttons button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(72, 255, 88, 0.9);
+    background: linear-gradient(45deg, #00ff99, #00ccff);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.8), 0 0 30px rgba(0, 204, 255, 0.8);
 }
 
 .video-buttons .fullscreen-button {
-    background-color: #007bff;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
 }
 
 .video-buttons .fullscreen-button:hover {
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+    background: linear-gradient(45deg, #0056b3, #007bff);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-row {
+        flex-direction: column; /* Stack videos vertically on small screens */
+    }
+
+    .video-container iframe {
+        height: 250px; /* Adjust height for smaller screens */
+    }
+
+    .video-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .video-buttons button {
+        width: 100%;
+    }
 }
