@@ -1,5 +1,3 @@
-<script src="script.js"></script>
-<link rel="stylesheet" href="video style.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +38,35 @@
             font-size: 18px;
         }
 
+        /* Toggle Buttons */
+        .video-toggle-buttons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .video-toggle-buttons button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            width: 200px;
+        }
+
+        .video-toggle-buttons button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(72, 255, 88, 0.7);
+        }
+
+        .video-toggle-buttons button:active {
+            background-color: #388e3c;
+        }
+
+        /* Portfolio Section with Full-Screen Background */
         .portfolio-videos {
             margin: 40px auto;
             text-align: center;
@@ -146,28 +173,40 @@
     <section class="portfolio-videos">
         <h2>My Portfolio</h2>
 
-        <!-- Showreel Section -->
-        <div class="showreel-title">Showreel</div>
-        <div class="video-container">
-            <iframe id="video1" src="https://www.youtube.com/embed/Q96zxmyAXjI?rel=0" title="Showreel Video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <div class="video-buttons">
-                <button onclick="window.open('https://youtu.be/Q96zxmyAXjI')">Watch on YouTube</button>
-                <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('video1'))">Go Full Screen</button>
-<!-- Showreel Section -->
-<div class="showreel-title">Showreel</div>
-<div class="video-container">
-    <iframe 
-        id="video1" 
-        src="https://www.youtube.com/embed/oZYhmcCEkng" 
-        title="Showreel Video" 
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-    </iframe>
-    <div class="video-buttons">
-        <button onclick="window.open('https://youtu.be/oZYhmcCEkng')">Watch on YouTube</button>
-        <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('video1'))">Go Full Screen</button>
-    </div>
-</div>
+        <!-- Video Toggle Buttons -->
+        <div class="video-toggle-buttons">
+            <button onclick="showLongVideos()">Long Videos</button>
+            <button onclick="showShortVideos()">Short Videos</button>
+        </div>
+
+        <!-- Long Video Section -->
+        <div id="long-videos" class="showreel-title" style="display: none;">
+            <div class="showreel-title">Long Videos</div>
+            <div class="video-container">
+                <iframe id="video1" src="https://www.youtube.com/embed/Q96zxmyAXjI?rel=0" title="Showreel Video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-buttons">
+                    <button onclick="window.open('https://youtu.be/Q96zxmyAXjI')">Watch on YouTube</button>
+                    <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('video1'))">Go Full Screen</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Short Video Section -->
+        <div id="short-videos" class="showreel-title" style="display: block;">
+            <div class="showreel-title">Short Videos</div>
+            <div class="video-container">
+                <iframe id="shortVideo1" src="https://www.youtube.com/embed/lgQt8lsuZyo" title="Short Video 1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-buttons">
+                    <button onclick="window.open('https://youtube.com/shorts/lgQt8lsuZyo?feature=share')">Watch on YouTube</button>
+                    <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('shortVideo1'))">Go Full Screen</button>
+                </div>
+            </div>
+            <div class="video-container">
+                <iframe id="shortVideo2" src="https://www.youtube.com/embed/NpQA_FAmTUE" title="Short Video 2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="video-buttons">
+                    <button onclick="window.open('https://youtube.com/shorts/NpQA_FAmTUE?feature=share')">Watch on YouTube</button>
+                    <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('shortVideo2'))">Go Full Screen</button>
+                </div>
             </div>
         </div>
     </section>
@@ -184,6 +223,18 @@
             } else if (element.msRequestFullscreen) { // IE/Edge
                 element.msRequestFullscreen();
             }
+        }
+
+        // Function to show long videos and hide short videos
+        function showLongVideos() {
+            document.getElementById('long-videos').style.display = 'block';
+            document.getElementById('short-videos').style.display = 'none';
+        }
+
+        // Function to show short videos and hide long videos
+        function showShortVideos() {
+            document.getElementById('long-videos').style.display = 'none';
+            document.getElementById('short-videos').style.display = 'block';
         }
     </script>
 </body>
