@@ -210,10 +210,17 @@
         </div>
     </div>
 </div>
-
-        <!-- Short Video Section -->
-        <div id="short-videos" class="showreel-title" style="display: block;">
-            <div class="showreel-title">Short Videos</div>
+<!-- Short Video Section -->
+<div id="short-videos" class="showreel-title" style="display: block;">
+    <div class="showreel-title">Short Videos</div>
+    <div class="video-container">
+        <iframe id="shortVideo1" src="https://www.youtube.com/embed/i0AtPWMLEFU" title="Short Video 1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="video-buttons">
+            <button onclick="window.open('https://youtube.com/shorts/i0AtPWMLEFU?feature=share')">Watch on YouTube</button>
+            <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('shortVideo1'))">Go Full Screen</button>
+        </div>
+    </div>
+</div>
             <div class="video-container">
                 <iframe id="shortVideo1" src="https://www.youtube.com/embed/lgQt8lsuZyo" title="Short Video 1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div class="video-buttons">
@@ -279,4 +286,4 @@
         }
     </script>
 </body>
-</html>
+                </html>
