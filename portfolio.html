@@ -183,6 +183,14 @@
 <div id="long-videos" class="showreel-title" style="display: none;">
     <div class="showreel-title">Long Videos</div>
 
+<!-- First New Video -->
+<div class="video-container">
+    <iframe id="video2" src="https://www.youtube.com/embed/OIp6R237VxE?rel=0" title="New Video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/OIp6R237VxE')">Watch on YouTube</button>
+        <button class="fullscreen-button" onclick="requestFullScreen(document.getElementById('video2'))">Go Full Screen</button>
+    </div>
+</div>
     <!-- First New Video -->
     <div class="video-container">
         <iframe id="video2" src="https://www.youtube.com/embed/-lbmbskp3CE?rel=0" title="Showreel Video" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -286,4 +294,17 @@
         }
     </script>
 </body>
-                </html>
+</html>
+<!-- YouTube Logo with Animation -->
+<div style="position: fixed; bottom: 20px; right: 20px;">
+  <a href="https://youtube.com/@officalplayervs1?si=iHLRlXdH4akE9fKu" target="_blank" style="text-decoration: none;">
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" 
+      alt="YouTube" 
+      style="
+        width: 60px; 
+        transition: transform 0.3s ease-in-out;"
+      onmouseover="this.style.transform='scale(1.2)'" 
+      onmouseout="this.style.transform='scale(1)'">
+  </a>
+                    </div>
