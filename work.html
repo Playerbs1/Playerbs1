@@ -1,23 +1,127 @@
 <head>
     <link rel="stylesheet" href="Work-Style.css">
 </head>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore My Work</title>
-    <link rel="stylesheet" href="Work-Style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d1d1d, #282828);
+            color: #fff;
+        }
+
+        /* Navigation Menu */
+        .main-nav {
+            background: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .main-nav ul li {
+            margin: 0 15px;
+        }
+        .main-nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .main-nav ul li a:hover {
+            color: #ff5733;
+        }
+
+        /* Section Styles */
+        .work-section {
+            padding: 80px 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff5733;
+        }
+
+        /* Video Cards */
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .video-thumbnail iframe {
+            width: 360px;
+            height: 215px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hidden Sections */
+        .hidden {
+            display: none;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            background: #333;
+        }
+        .footer a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            transition: transform 0.3s;
+        }
+        .footer a:hover {
+            transform: scale(1.1);
+        }
+        .youtube-logo {
+            width: 50px;
+            margin: 10px;
+            animation: glow 1.5s infinite;
+        }
+        @keyframes glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 5px #ff0000);
+            }
+            50% {
+                filter: drop-shadow(0 0 20px #ff0000);
+            }
+        }
+    </style>
 </head>
 <body>
-
     <!-- Navigation Menu -->
     <div class="main-nav">
         <ul>
-            <li><a href="#documentary">Documentary Style</a></li>
-            <li><a href="#music">Music Videos</a></li> <!-- Updated section name here -->
-            <li><a href="#trending">Trending</a></li>
+            <li><a onclick="showSection('documentary')">Documentary</a></li>
+            <li><a onclick="showSection('music')">Music</a></li>
+            <li><a onclick="showSection('trending')">Trending</a></li>
         </ul>
     </div>
 
@@ -25,115 +129,75 @@
     <section class="work-section">
         <h2 class="section-title">Explore My Projects</h2>
 
-        <!-- Container for left-to-right scrolling -->
-        <div class="scroll-container">
-            <!-- Documented Projects Section -->
-            <div id="documentary" class="work-item">
-                <h3>Documentary Projects</h3>
-                <p>Here are my documented projects showcasing my work over the years.</p>
-                <!-- Video Embed for Documented Video 0 -->
-                <div class="video-container">
-                    <div id="documentary-video1" class="video-thumbnail">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Na2ToqIGRxU" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/Na2ToqIGRxU')">Play on YouTube</button>
-                    <button class="play-page-btn" onclick="playFullscreen('Na2ToqIGRxU')">Play on My Page</button>
-                </div>                
-                <!-- Video Embed for Documented Video 1 -->
-                <div class="video-container">
-                    <div id="documentary-video1" class="video-thumbnail">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/DN43vG6dvsQ" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/DN43vG6dvsQ')">Play on YouTube</button>
-                    <button class="play-page-btn" onclick="playFullscreen('DN43vG6dvsQ')">Play on My Page</button>
+        <!-- Documentary Section -->
+        <div id="documentary" class="work-item">
+            <h3>Documentary Projects</h3>
+            <div class="video-container">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/Na2ToqIGRxU" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <!-- Video Embed for Documentary Video 2 -->
-                <div class="video-container">
-                    <div id="documentary-video2" class="video-thumbnail">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/oZYhmcCEkng" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/oZYhmcCEkng')">Play on YouTube</button>
-                    <button class="play-page-btn" onclick="playFullscreen('oZYhmcCEkng')">Play on My Page</button>
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/DN43vG6dvsQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/aksZ_GAf61w" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/N-1kaPlqbfU" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <!-- Music Videos Projects Section -->
-            <div id="music" class="work-item">
-                <h3>Music Videos Projects</h3>
-                <p>Explore the music videos I've worked on.</p>
-                <!-- Updated Video Embed for Music Video 1 -->
-                <div class="video-container">
-                    <div id="music-video1" class="video-thumbnail">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/6uqvbw9Chvw" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/6uqvbw9Chvw')">Play on YouTube</button>
-                    <button class="play-page-btn" onclick="playFullscreen('6uqvbw9Chvw')">Play on My Page</button>
-                </div>
+        </div>
 
-                <!-- Updated Video Embed for Music Video 2 -->
-                <div class="video-container">
-                    <div id="music-video2" class="video-thumbnail">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/qTmmoDKguwI" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/qTmmoDKguwI')">Play on YouTube</button>
-                    <button class="play-page-btn" onclick="playFullscreen('qTmmoDKguwI')">Play on My Page</button>
+        <!-- Music Section -->
+        <div id="music" class="work-item hidden">
+            <h3>Music Projects</h3>
+            <div class="video-container">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/6uqvbw9Chvw" frameborder="0" allowfullscreen></iframe>
                 </div>
-
-                <!-- Updated Video Embed for Music Video 3 -->
-                <div class="video-container">
-                    <div id="music-video3" class="video-thumbnail">
-                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/PcPxirhI_kE" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <button class="play-page-btn" onclick="openYouTube('https://youtu.be/PcPxirhI_kE')">Play on YouTube</button>
-                    <button class="play-page-btn" onclick="playFullscreen('PcPxirhI_kE')">Play on My Page</button>
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/qTmmoDKguwI" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/n90SPCBPEUg" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
+        </div>
 
-            <!-- Trending Projects Section -->
-            <div id="trending" class="work-item">
-                <h3>Trending Projects</h3>
-                <p>Check out some of the latest trending projects I’ve created.</p>
-                <div class="video-container">
-    <div id="trending-video" class="video-thumbnail">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/i0AtPWMLEFU" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <button class="play-page-btn" onclick="openYouTube('https://youtube.com/shorts/i0AtPWMLEFU?feature=share')">Play on YouTube</button>
-    <button class="play-page-btn" onclick="playFullscreen('i0AtPWMLEFU')">Play on My Page</button>
-</div>
+        <!-- Trending Section -->
+        <div id="trending" class="work-item hidden">
+            <h3>Trending Projects</h3>
+            <div class="video-container">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/sfUHFtpkIPU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/i0AtPWMLEFU" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Fullscreen Video Container -->
-    <div id="fullscreen-container" class="fullscreen-video-container" style="display: none;">
-        <iframe id="fullscreen-video" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-        <div class="close-btn" onclick="closeFullscreen()">X</div>
+    <!-- Footer -->
+    <div class="footer">
+        <a href="https://youtube.com/@officalplayervs1?si=GfZ8SoZCbkgfX-k1" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="youtube-logo">
+            Visit My YouTube Channel
+        </a>
     </div>
 
     <script>
-        // Function to open YouTube video
-        function openYouTube(url) {
-            window.open(url, '_blank');
+        // Show only the selected section
+        function showSection(sectionId) {
+            const sections = ['documentary', 'music', 'trending'];
+            sections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
         }
 
-        // Function to play video on the page in fullscreen
-        function playFullscreen(videoId) {
-            var videoUrl = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-            var fullscreenContainer = document.getElementById('fullscreen-container');
-            var fullscreenVideo = document.getElementById('fullscreen-video');
-            
-            fullscreenVideo.src = videoUrl;
-            fullscreenContainer.style.display = 'flex';
-        }
-
-        // Function to close fullscreen video
-        function closeFullscreen() {
-            var fullscreenContainer = document.getElementById('fullscreen-container');
-            var fullscreenVideo = document.getElementById('fullscreen-video');
-            
-            fullscreenVideo.src = '';
-            fullscreenContainer.style.display = 'none';
-        }
+        // Show documentary by default
+        showSection('documentary');
     </script>
-
 </body>
 </html>
