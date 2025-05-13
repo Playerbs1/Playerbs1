@@ -1,182 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Player bs 1</title>
-    <link rel="stylesheet" href="video style.css">
-    <script src="script.js"></script>
-    <style>
-        /* Basic Styling for Video Section */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Player bs 1</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" type="image/png">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header {
-            background-color: #333;
-            padding: 1rem;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #0f2027);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
 
-        header nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: right;
-        }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        header nav ul li {
-            display: inline-block;
-            margin-left: 20px;
-        }
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      backdrop-filter: blur(10px);
+    }
 
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    header nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: right;
+    }
 
-        /* Toggle Buttons */
-        .video-toggle-buttons {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    header nav ul li {
+      display: inline-block;
+      margin-left: 20px;
+    }
 
-        .video-toggle-buttons button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            width: 200px;
-        }
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-        .video-toggle-buttons button:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(72, 255, 88, 0.7);
-        }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
+    }
 
-        .video-toggle-buttons button:active {
-            background-color: #388e3c;
-        }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
 
-        /* Portfolio Section with Full-Screen Background */
-        .portfolio-videos {
-            margin: 40px auto;
-            text-align: center;
-            max-width: 1200px;
-        }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
 
-        .showreel-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #333;
-        }
+    .portfolio-videos {
+      margin: 40px auto;
+      text-align: center;
+      max-width: 1200px;
+      color: white;
+    }
 
-        .video-container {
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
-            max-width: 560px;
-            width: 100%;
-            background-color: #000;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    .video-toggle-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        iframe {
-            width: 100%;
-            height: 315px;
-            border: none;
-        }
+    .video-toggle-buttons button {
+      background-color: #6c5ce7;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 200px;
+      margin: 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 10px #a29bfe, 0 0 40px #a29bfe, 0 0 80px #a29bfe;
+    }
 
-        /* Button Styling Below Video */
-        .video-buttons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between buttons */
-        }
+    .video-toggle-buttons button::after {
+      content: '✨';
+      position: absolute;
+      right: 10px;
+      animation: sparkle 2s infinite ease-in-out;
+    }
 
-        .video-buttons button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 12px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            width: 200px;
-        }
+    @keyframes sparkle {
+      0% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.2) rotate(360deg); }
+      100% { opacity: 0; transform: scale(0.8) rotate(720deg); }
+    }
 
-        .video-buttons button:hover {
-            background-color: #45a049;
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(72, 255, 88, 0.7);
-        }
+    .showreel-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
 
-        .video-buttons button:active {
-            background-color: #388e3c;
-        }
+    .video-container {
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+      max-width: 560px;
+      width: 100%;
+      background-color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
-        .video-buttons .fullscreen-button {
-            background-color: #007bff;
-        }
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+    }
 
-        .video-buttons .fullscreen-button:hover {
-            background-color: #0056b3;
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
-        }
+    .video-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-        .video-buttons .fullscreen-button:active {
-            background-color: #003366;
-        }
+    .video-buttons button {
+      background-color: #00cec9;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      width: 200px;
+    }
 
-        /* Add some responsive design */
-        @media (max-width: 768px) {
-            .video-container {
-                max-width: 100%;
-            }
+    .video-buttons .fullscreen-button {
+      background-color: #0984e3;
+    }
 
-            .video-buttons {
-                flex-direction: column;
-            }
+    .video-buttons .fullscreen-button:hover {
+      background-color: #74b9ff;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+    }
 
-            .video-buttons button {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .video-buttons {
+        flex-direction: column;
+      }
+
+      .video-buttons button {
+        width: 100%;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      backdrop-filter: blur(8px);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #74b9ff;
+      text-decoration: none;
+    }
+
+  </style>
 </head>
 <body>
-    <!-- Navigation Menu -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Portfolio Videos Section -->
-    <section class="portfolio-videos">
-        <h2>My Portfolio</h2>
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-        <!-- Video Toggle Buttons -->
-        <div class="video-toggle-buttons">
-            <button onclick="showLongVideos()">Long Videos</button>
-            <button onclick="showShortVideos()">Short Videos</button>
+<section class="hero">
+  <h1>Welcome to Player bs 1's Portfolio</h1>
+  <p>Explore my some small Choose between long-form performances or short highlights below.</p>
+</section>
+
+<section class="portfolio-videos">
+  <h2>My Portfolio</h2>
+
+  <div class="video-toggle-buttons">
+    <button onclick="showLongVideos()">Long Videos</button>
+    <button onclick="showShortVideos()">Short Videos</button>
+  </div>
+
         </div>
 <!-- Long Video Section -->
 <div id="long-videos" class="showreel-title" style="display: none;">
@@ -320,17 +362,48 @@
         }
     </script>
 </body>
-</html>
-<!-- YouTube Logo with Animation -->
+<!-- Floating YouTube Icon -->
 <div style="position: fixed; bottom: 20px; right: 20px;">
-  <a href="https://www.youtube.com/@Ahmededitorbd/videos" target="_blank" style="text-decoration: none;">
-    <img 
-      src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" 
-      alt="YouTube" 
-      style="
-        width: 60px; 
-        transition: transform 0.3s ease-in-out;"
-      onmouseover="this.style.transform='scale(1.2)'" 
-      onmouseout="this.style.transform='scale(1)'">
+  <a href="https://www.youtube.com/@Ahmededitorbd/videos" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+         alt="YouTube"
+         style="width: 60px; transition: transform 0.3s ease-in-out;"
+         onmouseover="this.style.transform='scale(1.2)'"
+         onmouseout="this.style.transform='scale(1)'">
   </a>
 </div>
+
+<footer>
+  © 2025 Player bs 1. All rights reserved. | <a href="mukterahmedad@gmail.com">Contact</a>
+</footer>
+
+<script>
+  function showLongVideos() {
+    localStorage.setItem('videoView', 'long');
+    document.getElementById('long-videos').style.display = 'block';
+    document.getElementById('short-videos').style.display = 'none';
+  }
+
+  function showShortVideos() {
+    localStorage.setItem('videoView', 'short');
+    document.getElementById('long-videos').style.display = 'none';
+    document.getElementById('short-videos').style.display = 'block';
+  }
+
+  function openInNewFullscreen(url) {
+    const win = window.open(url, '_blank', 'fullscreen=yes');
+    if (win) {
+      win.focus();
+    }
+  }
+
+  // Auto show last selected video type
+  window.onload = () => {
+    const view = localStorage.getItem('videoView');
+    if (view === 'short') showShortVideos();
+    else showLongVideos();
+  }
+</script>
+
+</body>
+</html>
