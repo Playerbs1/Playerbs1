@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Player bs 1</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" type="image/png">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #0f2027);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      backdrop-filter: blur(10px);
+    }
+
+    header nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      text-align: right;
+    }
+
+    header nav ul li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .portfolio-videos {
+      margin: 40px auto;
+      text-align: center;
+      max-width: 1200px;
+      color: white;
+    }
+
+    .video-toggle-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .video-toggle-buttons button {
+      background-color: #6c5ce7;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 200px;
+      margin: 10px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 10px #a29bfe, 0 0 40px #a29bfe, 0 0 80px #a29bfe;
+    }
+
+    .video-toggle-buttons button::after {
+      content: '✨';
+      position: absolute;
+      right: 10px;
+      animation: sparkle 2s infinite ease-in-out;
+    }
+
+    @keyframes sparkle {
+      0% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.2) rotate(360deg); }
+      100% { opacity: 0; transform: scale(0.8) rotate(720deg); }
+    }
+
+    .showreel-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .video-container {
+      margin-bottom: 40px;
+      position: relative;
+      display: inline-block;
+      max-width: 560px;
+      width: 100%;
+      background-color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+    }
+
+    .video-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .video-buttons button {
+      background-color: #00cec9;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      width: 200px;
+    }
+
+    .video-buttons .fullscreen-button {
+      background-color: #0984e3;
+    }
+
+    .video-buttons .fullscreen-button:hover {
+      background-color: #74b9ff;
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .video-buttons {
+        flex-direction: column;
+      }
+
+      .video-buttons button {
+        width: 100%;
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      backdrop-filter: blur(8px);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #74b9ff;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to Player bs 1's Portfolio</h1>
+  <p>Explore my some small Choose between long-form performances or short highlights below.</p>
+</section>
+<section class="portfolio-videos">
+  <h2>My Portfolio</h2>
+
+  <div class="video-toggle-buttons">
+    <button onclick="showLongVideos()">Long Videos</button>
+    <button onclick="showShortVideos()">Short Videos</button>
+  </div>
+
+  <!-- ================= LONG VIDEOS ================= -->
+  <div id="long-videos" style="display:none;">
+
+    <h3>Long Videos</h3>
+
+    <!-- Video 1 -->
+    <div class="video-container">
+      <iframe id="long1" src="https://www.youtube.com/embed/DZAJrFwINl8?rel=0" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/DZAJrFwINl8')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('long1'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-container">
+      <iframe id="long2" src="https://www.youtube.com/embed/qLyaow2WuVY?rel=0" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/qLyaow2WuVY')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('long2'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-container">
+      <iframe id="long3" src="https://www.youtube.com/embed/9ltAjPY2dj4?rel=0" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/9ltAjPY2dj4')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('long3'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-container">
+      <iframe id="long4" src="https://www.youtube.com/embed/TfWcu3Y0w-s?rel=0" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/TfWcu3Y0w-s')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('long4'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Video 5 -->
+    <div class="video-container">
+      <iframe id="long5" src="https://www.youtube.com/embed/LlC61sdq3cQ?rel=0" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/LlC61sdq3cQ')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('long5'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Video 6 -->
+    <div class="video-container">
+      <iframe id="long6" src="https://www.youtube.com/embed/ots3kyWid3U?rel=0" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtu.be/ots3kyWid3U')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('long6'))">Go Full Screen</button>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ================= SHORT VIDEOS ================= -->
+  <div id="short-videos" style="display:none;">
+
+    <h3>Short Videos</h3>
+
+    <!-- Short 1 -->
+    <div class="video-container">
+      <iframe id="short1" src="https://www.youtube.com/embed/mZgENvFuvTE" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtube.com/shorts/mZgENvFuvTE')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('short1'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Short 2 -->
+    <div class="video-container">
+      <iframe id="short2" src="https://www.youtube.com/embed/xDAT9OJKORw" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtube.com/shorts/xDAT9OJKORw')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('short2'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Short 3 -->
+    <div class="video-container">
+      <iframe id="short3" src="https://www.youtube.com/embed/MXt-BUnIjQs" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtube.com/shorts/MXt-BUnIjQs')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('short3'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Short 4 -->
+    <div class="video-container">
+      <iframe id="short4" src="https://www.youtube.com/embed/XL-RQYEXJNg" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtube.com/shorts/XL-RQYEXJNg')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('short4'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Short 5 -->
+    <div class="video-container">
+      <iframe id="short5" src="https://www.youtube.com/embed/ewQlQbdJSlI" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtube.com/shorts/ewQlQbdJSlI')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('short5'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Short 6 -->
+    <div class="video-container">
+      <iframe id="short6" src="https://www.youtube.com/embed/rx5miNgd5oA" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtube.com/shorts/rx5miNgd5oA')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('short6'))">Go Full Screen</button>
+      </div>
+    </div>
+
+    <!-- Short 7 -->
+    <div class="video-container">
+      <iframe id="short7" src="https://www.youtube.com/embed/ttv4IS_fCzc" allowfullscreen></iframe>
+      <div class="video-buttons">
+        <button onclick="window.open('https://youtube.com/shorts/ttv4IS_fCzc')">Watch on YouTube</button>
+        <button onclick="requestFullScreen(document.getElementById('short7'))">Go Full Screen</button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+function requestFullScreen(element) {
+  if (element.requestFullscreen) {
+    element.requestFullscreen();
+  }
+}
+
+function showLongVideos() {
+  document.getElementById('long-videos').style.display = 'block';
+  document.getElementById('short-videos').style.display = 'none';
+}
+
+function showShortVideos() {
+  document.getElementById('long-videos').style.display = 'none';
+  document.getElementById('short-videos').style.display = 'block';
+}
+</script>
+</body>
+<!-- Floating YouTube Icon -->
+<div style="position: fixed; bottom: 20px; right: 20px;">
+  <a href="https://www.youtube.com/@Ahmededitorbd/videos" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png"
+         alt="YouTube"
+         style="width: 60px; transition: transform 0.3s ease-in-out;"
+         onmouseover="this.style.transform='scale(1.2)'"
+         onmouseout="this.style.transform='scale(1)'">
+  </a>
+</div>
+
+<footer>
+  © 2025 Player bs 1. All rights reserved. | <a href="mukterahmedad@gmail.com">Contact</a>
+</footer>
+
+<script>
+  function showLongVideos() {
+    localStorage.setItem('videoView', 'long');
+    document.getElementById('long-videos').style.display = 'block';
+    document.getElementById('short-videos').style.display = 'none';
+  }
+
+  function showShortVideos() {
+    localStorage.setItem('videoView', 'short');
+    document.getElementById('long-videos').style.display = 'none';
+    document.getElementById('short-videos').style.display = 'block';
+  }
+
+  function openInNewFullscreen(url) {
+    const win = window.open(url, '_blank', 'fullscreen=yes');
+    if (win) {
+      win.focus();
+    }
+  }
+
+  // Auto show last selected video type
+  window.onload = () => {
+    const view = localStorage.getItem('videoView');
+    if (view === 'short') showShortVideos();
+    else showLongVideos();
+  }
+</script>
+
+</body>
+</html>
