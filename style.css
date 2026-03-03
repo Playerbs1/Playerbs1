@@ -1,0 +1,768 @@
+/* Basic styling for nav and buttons */
+nav {
+    background-color: #333;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+/* Mobile Navigation Styling */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+
+    nav.active ul {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 20;
+    }
+}
+
+    .menu-toggle.open {
+        color: #e63946;
+    }
+}
+/* Navigation Bar Styling */
+nav {
+    background-color: #333;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* Hover Effects */
+nav ul li a:hover {
+    color: #e63946;
+    background-color: #ffffff;
+}
+
+/* Mobile Navigation Styling */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul li a {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+
+    /* Show Navigation Menu when Active */
+    nav.active ul {
+        transform: translateX(0);
+    }
+
+    /* Add a Menu Toggle Button */
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        color: #ffffff;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 20;
+    }
+
+    .menu-toggle.open {
+        color: #e63946;
+    }
+}
+/* Global Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Header Section with Video Background */
+.header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Title Animations */
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 1s ease-in-out;
+}
+
+.title.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.title.color-change {
+    color: #ff3e3e;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+}
+
+/* Explore Button */
+.explore-button {
+    padding: 12px 24px;
+    background-color: #e63946;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-button:hover {
+    background-color: #d62828;
+    transform: translateY(-5px);
+}
+
+}
+
+}
+
+/* Work Section */
+/* Work Section Styles */
+.work-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  
+  /* Solid Background Color */
+  background-color: #2c3e50; /* Change to any color you like */
+  
+  /* OR Use Gradient Background */
+  /* Uncomment the line below and comment the background-color line above to use a gradient */
+  /* background: linear-gradient(135deg, #6a11cb, #2575fc); */
+}
+
+.section-title {
+  font-family: 'Arial', sans-serif; /* Change the font here */
+  font-size: 3rem; /* Font size */
+  color: #f39c12; /* Text color (adjust as needed) */
+  animation: fadeInUp 2s ease-out, fontChange 3s infinite; /* Animation */
+}
+
+/* Fade-in and move-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Font change animation */
+@keyframes fontChange {
+  0% {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+  }
+  50% {
+    font-family: 'Courier New', monospace;
+    font-size: 3.5rem;
+  }
+  100% {
+    font-family: 'Arial', sans-serif;
+    font-size: 3rem;
+  }
+}
+.work-section {
+    padding: 60px 0;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.work-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.work-box {
+    width: 250px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #282828;
+    border: 2px solid #333;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.work-box:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+}
+
+.work-title {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.work-box:hover .work-title {
+    color: #ff3e3e;
+    text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 0;
+    background-color: #2c3e50;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #ecf0f1;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #bdc3c7;
+    line-height: 1.8;
+    margin-top: 20px;
+}
+
+/* Skills Section */
+.skills {
+    padding: 60px 0;
+    background-color: #1e2a47;
+    text-align: center;
+}
+
+.skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.skills li {
+    font-size: 1.2rem;
+    color: #ecf0f1;
+    padding: 10px 20px;
+    background-color: #2980b9;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.skills li:hover {
+    background-color: #3498db;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.skills li:hover::after {
+    content: "📌";
+    font-size: 1.5rem;
+    color: #27ae60;
+    margin-left: 10px;
+}
+
+/* Spacing Between About and Skills Sections */
+.about-section + .skills {
+    margin-top: 40px;
+}
+
+/* Profile Image Styling */
+.img {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+    border: 5px solid transparent;
+}
+
+.profile-pic:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+}
+
+.profile-pic.clicked {
+    animation: glow-animation 1s forwards;
+}
+
+/* Red Glow Animation */
+@keyframes glow-animation {
+    0% {
+        border: 5px solid transparent;
+    }
+    50% {
+        border: 5px solid red;
+        box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+    }
+    100% {
+        border: 5px solid red;
+        box-shadow: 0 0 25px 10px rgba(255, 0, 0, 1);
+    }
+}
+
+/* Hover Text Styling */
+.hover-text {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px
+    /* Global Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Button to Show/Hide the Pricing Section */
+.show-pricing-button {
+    padding: 15px 30px;
+    background-color: #2980b9;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.show-pricing-button:hover {
+    background-color: #3498db;
+    transform: translateY(-3px);
+}
+
+/* Service Section Styling */
+.service-section {
+    padding: 60px 0;
+    background-color: #1c1c1c;
+    color: #fff;
+    display: none; /* Initially hidden */
+    text-align: center;
+}
+
+.service-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff6347;
+    text-shadow: 0 0 8px rgba(255, 99, 71, 0.8);
+}
+
+/* Pricing Card Styles */
+.pricing-card {
+    background-color: #333;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px;
+    width: 300px;
+    display: inline-block;
+    text-align: left;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Title Styling */
+.pricing-card h3 {
+    font-size: 2rem;
+    color: #ff6347;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.pricing-card p {
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.pricing-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.pricing-card ul li {
+    font-size: 1rem;
+    color: #b3b3b3;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.pricing-card .service-button {
+    padding: 12px 24px;
+    background-color: #e63946;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.pricing-card .service-button:hover {
+    background-color: #d62828;
+    transform: translateY(-3px);
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 768px) {
+    .service-container h2 {
+        font-size: 2rem;
+    }
+
+    .pricing-card {
+        width: 100%;
+    }
+
+    .show-pricing-button {
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+/* Basic body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for your content */
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8); /* Slight white background with transparency */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 1;
+}
+
+/* Soft Gradient Background with Blur */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 0, 150, 0.7), rgba(0, 204, 255, 0.7)); /* Soft gradient effect */
+    filter: blur(10px); /* Apply blur to the background */
+    z-index: -1;
+}
+
+/* Heading and text styles */
+h1 {
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Button with glow effect */
+button {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+/* Glow Effect on Click */
+.red-glow {
+    color: #ff0000; /* Red color */
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+button:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Additional hover effects for links */
+a {
+    color: #ff4b2b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff416c;
+}
+
+/* Optional: Styling for social media icons or other elements */
+.social-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #ff416c;
+}/* Contact Section Styles */
+.contact-section {
+    background: rgba(0, 0, 0, 0.6);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    text-align: center;
+    padding: 50px;
+    background-color: #333;
+    color: white;
+}
+
+.title {
+    font-size: 3em;
+}
+
+.subtitle {
+    font-size: 1.5em;
+}
+
+/* Rest of the Contact Section CSS (form, buttons, etc.) */
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>

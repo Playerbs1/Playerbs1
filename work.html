@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore My Work</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1d1d1d, #282828);
+            color: #fff;
+        }
+
+        /* Navigation Menu */
+        .main-nav {
+            background: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .main-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .main-nav ul li {
+            margin: 0 15px;
+        }
+        .main-nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .main-nav ul li a:hover {
+            color: #ff5733;
+        }
+
+        /* Section Styles */
+        .work-section {
+            padding: 80px 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff5733;
+        }
+
+        /* Video Cards */
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .video-thumbnail iframe {
+            width: 360px;
+            height: 215px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hidden Sections */
+        .hidden {
+            display: none;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            background: #333;
+        }
+        .footer a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            transition: transform 0.3s;
+        }
+        .footer a:hover {
+            transform: scale(1.1);
+        }
+        .youtube-logo {
+            width: 50px;
+            margin: 10px;
+            animation: glow 1.5s infinite;
+        }
+        @keyframes glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 5px #ff0000);
+            }
+            50% {
+                filter: drop-shadow(0 0 20px #ff0000);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <div class="main-nav">
+        <ul>
+            <li><a onclick="showSection('documentary')">Documentary</a></li>
+            <li><a onclick="showSection('music')">Music</a></li>
+            <li><a onclick="showSection('trending')">Trending</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Section -->
+    <section class="work-section">
+        <h2 class="section-title">Explore My Projects</h2>
+<!-- Documentary Section -->
+<div id="documentary" class="work-item">
+    <h3>Documentary Projects</h3>
+    <div class="video-container">
+        <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/h6UM8p6_1vM" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/1zJ8f3aTM3M" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/pP_zAjXf_Bo" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/IjlbuwbOBwc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/N-1kaPlqbfU" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/vCE97unnbxU" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+        </div>
+
+        <!-- Music Section -->
+ <div id="music" class="work-item hidden">
+    <h3>Music Projects</h3>
+    <div class="video-container">
+        <div class="video-thumbnail">
+            <iframe src="https://www.youtube.com/embed/ZcT-Vd0WDcg" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/n90SPCBPEUg" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Section -->
+        <div id="trending" class="work-item hidden">
+            <h3>Trending Projects</h3>
+            <div class="video-container">
+                <div class="video-thumbnail">
+                    <iframe src="https://www.youtube.com/embed/sfUHFtpkIPU" frameborder="0" allowfullscreen></iframe>
+  <div class="video-container">
+    <div class="video-thumbnail">
+        <iframe src="https://www.youtube.com/embed/XRVqE7pBj9c" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>                  
+        </div>
+    </section>
+
+<!-- Footer -->
+<div class="footer">
+    <a href="https://youtube.com/@ahmededitorbd?si=Xr6Ov93MgLYGO0xy" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube" class="youtube-logo">
+        Visit My YouTube Channel
+    </a>
+</div>
+        </a>
+    </div>
+
+    <script>
+        // Show only the selected section
+        function showSection(sectionId) {
+            const sections = ['documentary', 'music', 'trending'];
+            sections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Show documentary by default
+        showSection('documentary');
+    </script>
+</body>
+</html>
